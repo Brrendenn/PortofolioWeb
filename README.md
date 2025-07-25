@@ -1,69 +1,27 @@
-# React + TypeScript + Vite
+# Portfolio Website - Nicholas Brandon Chang
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the source code for my personal portfolio website, designed to showcase my skills, projects, and journey as an aspiring web developer. The site is built with a modern tech stack and features a clean, responsive design with smooth animations.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  * **Animated Hero Section**: A stunning hero section with a blur-in text effect and social media links that animate on load and re-animate on scroll.
+  * **Dynamic Scroll Animations**: Content in the "About," "Skills," and "Projects" sections animates into view as you scroll down and re-animates when scrolling up.
+  * **Interactive Project Cards**: A dedicated section to showcase my work. Each project card includes an image, description, tech stack tags, and links to the live demo and GitHub repository.
+  * **Responsive Design**: The layout is fully responsive and looks great on all devices, from mobile phones to desktops.
+  * **Hidden Scrollbar**: A clean, modern aesthetic with the browser's scrollbar hidden for an uncluttered look.
+  * **Dark Mode**: A sleek dark mode theme for comfortable viewing in low-light environments.
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Check out the live version of the website here: **[Your Live URL Here]** *(e.g., https://www.google.com/search?q=portfolio.yourdomain.com)*
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Technologies Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+This project was built using a modern and powerful set of technologies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+  * **React**: A JavaScript library for building user interfaces.
+  * **TypeScript**: For adding static typing to JavaScript, improving code quality and maintainability.
+  * **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+  * **Framer Motion**: A production-ready motion library for creating beautiful and smooth animations.
+  * **Vite**: A next-generation frontend tooling that provides a faster and leaner development experience.
+  * **react-icons**: A library that provides a comprehensive set of icons for React projects.
