@@ -3,7 +3,7 @@ import { Check, Computer } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 
 const NavBar = () => {
-  const navLinks = ["About", "Skills", "Projects  "];
+  const navLinks = ["About", "Skills", "Projects"];
   const userEmail = "nbr4nd0n2005@gmail.com";
 
   const [isCopied, setIsCopied] = useState(false);
