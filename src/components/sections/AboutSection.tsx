@@ -73,7 +73,7 @@ const AboutSection = () => {
               onError={(e) => {
                 (e.target as HTMLImageElement).onerror = null;
                 (e.target as HTMLImageElement).src =
-                  "/images/mypic.jpeg";
+                  "https://placehold.co/600x800/e2e8f0/475569?text=Brandon";
               }}
             />
           </div>
