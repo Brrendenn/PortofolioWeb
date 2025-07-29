@@ -83,7 +83,7 @@ const HeroSection = () => {
     {
       icon: "<R>",
       text: "React",
-      className: 'flex top-[30%] right-[10%] -rotate-12 md:top-[60%] md:right-[40%]',
+      className: 'flex top-[30%] left-[70%] -rotate-120 md:top-[60%] md:right-[40%]',
       delay: 0.4,
     },
     {
@@ -124,7 +124,7 @@ const HeroSection = () => {
 
         <motion.p
           variants={itemVariants}
-          className="text-zinc-500 dark:text-white font-semibold text-lg md:text-xl"
+          className="rotate text-zinc-500 dark:text-white font-semibold text-lg md:text-xl"
         >
           Aspiring Web Developer
         </motion.p>
