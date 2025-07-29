@@ -83,7 +83,7 @@ const HeroSection = () => {
     {
       icon: "<R>",
       text: "React",
-      className: 'flex top-[30%] left-[70%] -rotate-120 md:top-[60%] md:right-[40%]',
+      className: 'flex top-[30%] right-[10%] rotate-12 md:top-[20%] md:right-[40%] md:-rotate-12',
       delay: 0.4,
     },
     {
