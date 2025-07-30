@@ -77,7 +77,7 @@ const HeroSection = () => {
     {
       icon: "()=>{}",
       text: "JavaScript",
-      className: 'flex top-[30%] right-[10%] md:top-[30%] md:right-[47%]',
+      className: 'flex top-[30%] right-[10%] md:top-[28%] md:right-[44%]',
       delay: 0.3,
     },
     {
@@ -89,7 +89,7 @@ const HeroSection = () => {
     {
       icon: "npm",
       text: "Node",
-      className: 'hidden md:flex top-[20%] right-[25%] ',
+      className: 'hidden md:flex top-[20%] right-[20%] ',
       delay: 0.5,
     },
   ];
