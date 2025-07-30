@@ -107,7 +107,7 @@ const HeroSection = () => {
         animate={inView ? "visible" : "hidden"}
         className="flex flex-col items-center justify-center"
       >
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0">
           {syntaxElements.map((element, index) => (
             <SyntaxIcon
               key={index}
@@ -137,7 +137,7 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors"
+            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
           >
             <FaGithub size={24} />
           </a>
@@ -146,7 +146,7 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors"
+            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
           >
             <FaLinkedin size={24} />
           </a>
@@ -155,7 +155,7 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors"
+            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
           >
             <FaInstagram size={24} />
           </a>
