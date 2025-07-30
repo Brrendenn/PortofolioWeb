@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
-import TextComponent from "../ui/TextComponent";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 type SyntaxIconProps = {
