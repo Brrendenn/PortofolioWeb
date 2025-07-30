@@ -14,7 +14,7 @@ type SyntaxIconProps = {
 const SyntaxIcon = ({ icon, text, className, delay }: SyntaxIconProps) => {
   return (
     <motion.div
-      className={`absolute items-center gap-2 p-2 px-3 bg-gray-800 bg-opacity-80 backdrop-blur-sm border border-gray-700 rounded-lg shadow-lg ${className}`}
+      className={`absolute items-center gap-2 p-2 px-3 bg-gray-800 dark:bg-zinc-200 bg-opacity-80 backdrop-blur-sm border border-gray-700 rounded-lg shadow-lg ${className}`}
       initial={{ opacity: 0, scale: 0.5, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{
