@@ -71,25 +71,25 @@ const HeroSection = () => {
     {
       icon: "{}",
       text: "CSS",
-      className: 'hidden md:flex top-[20%] right-[25%]',
+      className: 'hidden md:flex bottom-[25%] right-[30%]',
       delay: 0.2,
     },
     {
       icon: "()=>{}",
       text: "JavaScript",
-      className: 'flex bottom-[20%] left-[5%] md:bottom-[25%] md:left-[30%]',
+      className: 'flex top-[30%] right-[10%] md:top-[30%] md:right-[47%]',
       delay: 0.3,
     },
     {
       icon: "<R>",
       text: "React",
-      className: 'flex top-[30%] right-[10%] md:top-[34%] md:right-[47%]',
+      className: 'flex bottom-[20%] left-[5%] md:bottom-[25%] md:left-[30%] ',
       delay: 0.4,
     },
     {
       icon: "npm",
       text: "Node",
-      className: 'hidden md:flex bottom-[25%] right-[30%]',
+      className: 'hidden md:flex top-[20%] right-[25%] ',
       delay: 0.5,
     },
   ];
