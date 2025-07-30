@@ -51,7 +51,7 @@ const HeroSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.4,
       },
     },
   };
@@ -119,7 +119,7 @@ const HeroSection = () => {
           ))}
         </div>
         <motion.div variants={itemVariants}>
-          <TextComponent />
+          <h1 className="font-bold text-2xl md:text-5xl mb-2 dark:text-white">Nicholas Brandon Chang</h1>
         </motion.div>
 
         <motion.p
