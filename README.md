@@ -8,12 +8,11 @@ This repository contains the source code for my personal portfolio website, desi
   * **Dynamic Scroll Animations**: Content in the "About," "Skills," and "Projects" sections animates into view as you scroll down and re-animates when scrolling up.
   * **Interactive Project Cards**: A dedicated section to showcase my work. Each project card includes an image, description, tech stack tags, and links to the live demo and GitHub repository.
   * **Responsive Design**: The layout is fully responsive and looks great on all devices, from mobile phones to desktops.
-  * **Hidden Scrollbar**: A clean, modern aesthetic with the browser's scrollbar hidden for an uncluttered look.
   * **Dark Mode**: A sleek dark mode theme for comfortable viewing in low-light environments.
 
 ## 🚀 Live Demo
 
-Check out the live version of the website here: **[Your Live URL Here]** *(e.g., https://www.google.com/search?q=portfolio.yourdomain.com)*
+Check out the live version of the website here: **[https://brandons-portofolio.vercel.app]**
 
 ## 🛠️ Technologies Used
 
