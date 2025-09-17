@@ -55,7 +55,7 @@ const TechSection = () => {
                   <CardContent className="flex flex-col items-center justify-center h-full p-4">
                     <img
                       src={tech.imgSrc}
-                      className="w-16 h-16 mb-2"
+                      className="w-16 h-16 mb-2 dark:brightness-0 dark:invert"
                       onError={(e) => {
                         (e.target as HTMLImageElement).onerror = null;
                         (
