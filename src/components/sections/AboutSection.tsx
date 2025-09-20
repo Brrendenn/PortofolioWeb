@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import { FaLaptopCode, FaCity } from "react-icons/fa";
 
 const AboutSection = () => {
   type ReactIconProps = {
@@ -198,14 +199,14 @@ const AboutSection = () => {
           </p>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <InfoCard
-              icon={<BookOpenIcon className="w-8 h-8" />}
+              icon={<FaLaptopCode className="w-6 h-6" />}
               title="Learning"
               text="Next.js & TypeScript"
             />
             <InfoCard
-              icon={<MapPinIcon className="w-8 h-8" />}
+              icon={<FaCity className="w-6 h-6" />}
               title="Location"
-              text="Jakarta, Indonesia"
+              text="Tangerang, Indonesia"
             />
           </div>
         </motion.div>
