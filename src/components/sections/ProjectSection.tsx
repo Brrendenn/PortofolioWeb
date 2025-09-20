@@ -8,8 +8,9 @@ const projects = [
       "DevLink is a versatile developer tool designed to streamline the creation of personalized link-sharing platforms. It combines a robust backend API with a sleek, component-driven frontend, enabling rapid development of scalable, secure, and visually consistent web applications.",
     imageUrl: "/images/DevLink.png",
     liveLink: "https://devlink-project.vercel.app/",
-    githubUrl: "https://github.com/Brrendenn/DevLink",
+    githubUrl: "https://github.com/Brrendenn/devlink-project",
     tags: ["Next.js", "Node.js", "Express", "TypeScript", "PostgreSQL"],
+    isPrivate: false,
   },
   {
     title: "Company Profile Website",
@@ -19,6 +20,7 @@ const projects = [
     liveLink: "https://ptpck.com",
     githubUrl: "https://github.com/Brrendenn/company-web",
     tags: ["Next.js", "TailwindCSS", "Framer Motion"],
+    isPrivate: true,
   },
   {
     title: "I-Tung",
@@ -28,6 +30,7 @@ const projects = [
     liveLink: "https://i-tung-expense-tracker.vercel.app/",
     githubUrl: "https://github.com/Brrendenn/I-Tung-Expense-Tracker",
     tags: ["React.js", "Node.js", "TailwindCSS", "ClerkAuth"],
+    isPrivate: false,
   },
   {
     title: "LearnSphere",
@@ -44,6 +47,7 @@ const projects = [
       "Internet Computer",
       "Fetch.ai",
     ],
+    isPrivate: false,
   },
 ];
 
@@ -117,7 +121,8 @@ const ProjectSection = () => {
                 <div className="p-6 flex flex-col flex-grow">
                   <h3 className="flex items-center text-xl font-bold text-zinc-900 dark:text-white mb-2">
                     <span>{project.title}</span>
-                    <a
+                    {!project.isPrivate && (
+                      <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -126,6 +131,7 @@ const ProjectSection = () => {
                     >
                       <FaGithub size={22} />
                     </a>
+                    )}
                   </h3>
                   <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4 flex-grow">
                     {project.description}
