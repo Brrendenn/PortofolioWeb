@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaFileDownload,
+} from "react-icons/fa";
 
 type SyntaxIconProps = {
   icon: string;
@@ -64,31 +69,31 @@ const HeroSection = () => {
     {
       icon: "</>",
       text: "HTML",
-      className: 'flex top-[15%] left-[10%] md:top-[20%] md:left-[20%]',
+      className: "flex top-[15%] left-[10%] md:top-[20%] md:left-[20%]",
       delay: 0.1,
     },
     {
       icon: "{}",
       text: "CSS",
-      className: 'hidden md:flex bottom-[25%] right-[30%]',
+      className: "hidden md:flex bottom-[25%] right-[30%]",
       delay: 0.2,
     },
     {
       icon: "()=>{}",
       text: "JavaScript",
-      className: 'flex top-[30%] right-[10%] md:top-[28%] md:right-[44%]',
+      className: "flex top-[30%] right-[10%] md:top-[28%] md:right-[44%]",
       delay: 0.3,
     },
     {
       icon: "<R>",
       text: "React",
-      className: 'flex bottom-[20%] left-[5%] md:bottom-[25%] md:left-[30%] ',
+      className: "flex bottom-[20%] left-[5%] md:bottom-[25%] md:left-[30%] ",
       delay: 0.4,
     },
     {
       icon: "npm",
       text: "Node",
-      className: 'hidden md:flex top-[20%] right-[20%] ',
+      className: "hidden md:flex top-[20%] right-[20%] ",
       delay: 0.5,
     },
   ];
@@ -118,7 +123,9 @@ const HeroSection = () => {
           ))}
         </div>
         <motion.div variants={itemVariants}>
-          <h1 className="font-bold text-2xl md:text-5xl mb-2 dark:text-white">Nicholas Brandon Chang</h1>
+          <h1 className="font-bold text-2xl md:text-5xl mb-2 dark:text-white">
+            Nicholas Brandon Chang
+          </h1>
         </motion.div>
 
         <motion.p
@@ -129,34 +136,44 @@ const HeroSection = () => {
         </motion.p>
         <motion.div
           variants={itemVariants}
-          className="flex items-center gap-x-6 mt-4"
+          className="flex flex-col items-center gap-4 mt-4"
         >
+          <div className="flex items-center gap-x-6">
+            <a
+              href="https://github.com/Brrendenn"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
+            >
+              <FaGithub size={24} />
+            </a>
+            <a
+              href="https://linkedin.com/in/nicholas-brandon-chang"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
+            >
+              <FaLinkedin size={24} />
+            </a>
+            <a
+              href="https://instagram.com/nicbrandc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
+            >
+              <FaInstagram size={24} />
+            </a>
+          </div>
           <a
-            href="https://github.com/Brrendenn"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
+            href="/resume/Nicholas_Brandon_Chang-Resume.pdf" // Replace with your resume path
+            download="Nicholas_Brandon_Chang-Resume.pdf"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-zinc-200 text-zinc-100 dark:text-zinc-800 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors z-10"
           >
-            <FaGithub size={24} />
-          </a>
-          <a
-            href="https://linkedin.com/in/nicholas-brandon-chang"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
-          >
-            <FaLinkedin size={24} />
-          </a>
-          <a
-            href="https://instagram.com/nicbrandc"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
-          >
-            <FaInstagram size={24} />
+            <FaFileDownload size={20} />
+            <span>Download Resume</span>
           </a>
         </motion.div>
       </motion.div>
