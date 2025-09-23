@@ -173,7 +173,7 @@ const HeroSection = () => {
             className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-zinc-200 text-zinc-100 dark:text-zinc-800 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors z-10"
           >
             <FaFileDownload size={20} />
-            <span>Download Resume</span>
+            <span className="font-semibold">Download Resume</span>
           </a>
         </motion.div>
       </motion.div>
