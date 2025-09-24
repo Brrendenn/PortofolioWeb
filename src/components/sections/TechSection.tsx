@@ -8,7 +8,8 @@ const technology = [
   { name: "Tailwind CSS", imgSrc: "/icons/tailwindcss.svg" },
   { name: "Next", imgSrc: "/icons/nextdotjs.svg" },
   { name: "Git", imgSrc: "/icons/git.svg" },
-  { name: "Figma", imgSrc: "/icons/figma.svg"}
+  { name: "Figma", imgSrc: "/icons/figma.svg"},
+  { name: "Java", imgSrc: "/icons/java.svg" },
 ];
 
 const TechSection = () => {

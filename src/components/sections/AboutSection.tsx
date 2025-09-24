@@ -100,7 +100,7 @@ const AboutSection = () => {
         <div className="absolute bottom-4 left-4 text-white">
           <div className="text-3xl font-bold">Brandon</div>
           <div className="text-md opacity-90">Web Developer</div>
-          <div className="text-sm opacity-75 mt-1">Jakarta, Indonesia</div>
+          <div className="text-sm opacity-75 mt-1">Tangerang, Indonesia</div>
         </div>
 
         <div className="absolute top-2 right-4 w-6 h-6 bg-white/10 rounded-full"></div>
@@ -162,7 +162,7 @@ const AboutSection = () => {
             <InfoCard
               icon={<FaLaptopCode className="w-6 h-6" />}
               title="Learning"
-              text="Next.js & TypeScript"
+              text="Java & TypeScript"
             />
             <InfoCard
               icon={<FaCity className="w-6 h-6" />}
