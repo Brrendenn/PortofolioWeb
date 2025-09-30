@@ -102,7 +102,7 @@ const HeroSection = () => {
     <section
       id="home"
       ref={ref}
-      className="relative w-full h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden"
+      className="relative w-full h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden bg-white dark:bg-zinc-900"
     >
       <motion.div
         key={key}
