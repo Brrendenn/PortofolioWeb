@@ -4,7 +4,7 @@ import { AnimatedThemeToggler } from "./animated-theme-toggler";
 
 const NavBar = () => {
   const navLinks = ["About", "Skills", "Projects"];
-  const userEmail = "nbr4nd0n2005@gmail.com";
+  const userEmail = "brandon.changg03@gmail.com";
 
   const [isCopied, setIsCopied] = useState(false);
 
