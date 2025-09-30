@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Check, Computer } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
+import { AnimatedThemeToggler } from "./animated-theme-toggler";
 
 const NavBar = () => {
   const navLinks = ["About", "Skills", "Projects"];
@@ -86,7 +86,7 @@ const NavBar = () => {
           </>
         )}
       </button>
-      <ModeToggle />
+      <AnimatedThemeToggler />
     </nav>
   );
 };
