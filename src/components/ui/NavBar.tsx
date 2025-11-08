@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Check, Computer } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
+import { AnimatedThemeToggler } from "./animated-theme-toggler";
 
 const NavBar = () => {
   const navLinks = ["About", "Skills", "Projects"];
-  const userEmail = "nbr4nd0n2005@gmail.com";
+  const userEmail = "brandon.changg03@gmail.com";
 
   const [isCopied, setIsCopied] = useState(false);
 
@@ -86,7 +86,7 @@ const NavBar = () => {
           </>
         )}
       </button>
-      <ModeToggle />
+      <AnimatedThemeToggler />
     </nav>
   );
 };

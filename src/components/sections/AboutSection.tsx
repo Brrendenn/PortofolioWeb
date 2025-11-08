@@ -76,10 +76,10 @@ const AboutSection = () => {
         ease: "easeInOut",
       }}
     >
-      <div className="w-80 h-60 bg-gradient-to-br from-zinc-500 to-zinc-700 rounded-lg shadow-lg overflow-hidden relative">
-        <div className="absolute top-3 left-3 w-28 h-28 rounded-full overflow-hidden border-2 border-white/30 bg-white/10">
+      <div className="w-80 h-60 bg-gradient-to-br from-zinc-500 to-zinc-700 dark:from-zinc-400 dark:to-zinc-200 rounded-lg shadow-lg overflow-hidden relative">
+        <div className="absolute top-3 left-3 w-28 h-28 rounded-full overflow-hidden border-2 border-white/30 dark:border-b-gray-400 bg-white/10">
           <img
-            src="/images/mypic.jpeg"
+            src="/images/PasFoto.jpg"
             alt="Brandon Profile"
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -93,11 +93,11 @@ const AboutSection = () => {
           />
         </div>
 
-        <div className="absolute top-4 right-4 text-white text-right">
+        <div className="absolute top-4 right-4 text-white dark:text-black text-right">
           <div className="text-sm font-light tracking-wide">DEVELOPER ID</div>
         </div>
 
-        <div className="absolute bottom-4 left-4 text-white">
+        <div className="absolute bottom-4 left-4 text-white dark:text-black">
           <div className="text-3xl font-bold">Brandon</div>
           <div className="text-md opacity-90">Web Developer</div>
           <div className="text-sm opacity-75 mt-1">Tangerang, Indonesia</div>
