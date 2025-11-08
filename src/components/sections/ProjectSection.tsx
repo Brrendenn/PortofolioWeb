@@ -49,6 +49,21 @@ const projects = [
     ],
     isPrivate: false,
   },
+  {
+    title: "Community Spark",
+    description:
+      'Community Spark is a full-stack web application designed to help communities track, manage, and visualize local projects and initiatives. Developed with a Laravel backend and a React frontend (using Inertia.js and Tailwind CSS), the app provides a clean interface for users to report and monitor community "issues".',
+    imageUrl: "/images/CommunitySpark.png",
+    liveLink: "https://community-spark.up.railway.app",
+    githubUrl: "https://github.com/Brrendenn/Community-Action-Tracker.git",
+    tags: [
+      "PHP Laravel",
+      "TailwindCSS",
+      "React.js",
+      "MySQL",
+    ],
+    isPrivate: false,
+  },
 ];
 
 const ProjectSection = () => {
