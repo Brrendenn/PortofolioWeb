@@ -7,6 +7,8 @@ import {
   FaLinkedin,
   FaFileDownload,
 } from "react-icons/fa";
+import { cn } from "@/lib/utils";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 type SyntaxIconProps = {
   icon: string;
@@ -102,14 +104,21 @@ const HeroSection = () => {
     <section
       id="home"
       ref={ref}
-      className="relative w-full h-screen flex flex-col items-center justify-center text-center p-4 overflow-hidden bg-white dark:bg-zinc-900"
+      className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-white dark:bg-zinc-950"
     >
+      <InteractiveGridPattern
+        className="opacity-70"
+        squares={[50, 50]}
+        width={50}
+        height={50}
+        squaresClassName="dark:hover:fill-white/20 dark:stroke-white/5 hover:fill-zinc-900/20 stroke-zinc-400/20"
+      />
       <motion.div
         key={key}
         variants={containerVariants}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="flex flex-col items-center justify-center"
+        className="flex flex-col items-center justify-center pointer-events-none"
       >
         <div className="absolute inset-0">
           {syntaxElements.map((element, index) => (
@@ -138,7 +147,7 @@ const HeroSection = () => {
           variants={itemVariants}
           className="flex flex-col items-center gap-4 mt-4"
         >
-          <div className="flex items-center gap-x-6">
+          <div className="flex items-center gap-x-6 pointer-events-auto">
             <a
               href="https://github.com/Brrendenn"
               target="_blank"
@@ -170,7 +179,7 @@ const HeroSection = () => {
           <a
             href="/resume/Nicholas_Brandon_Chang-Resume.pdf" // Replace with your resume path
             download="Nicholas_Brandon_Chang-Resume.pdf"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-zinc-200 text-zinc-100 dark:text-zinc-800 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors z-10"
+            className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-zinc-200 text-zinc-100 dark:text-zinc-800 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors z-10 pointer-events-auto"
           >
             <FaFileDownload size={20} />
             <span className="font-semibold">Download Resume</span>

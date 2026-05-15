@@ -1,7 +1,17 @@
 import { motion, type Variants } from "framer-motion";
-import { FaLink, FaGithub } from "react-icons/fa";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
-const projects = [
+interface Project {
+  title: string;
+  description: string;
+  imageUrl: string;
+  liveLink: string;
+  githubUrl: string;
+  tags: string[];
+  isPrivate: boolean;
+}
+
+const myProjects: Project[] = [
   {
     title: "DevLink",
     description:
@@ -15,7 +25,7 @@ const projects = [
   {
     title: "Company Profile Website",
     description:
-      "A sleek, responsive company profile portfolio to showcase projects, built with Next and Framer Motion for smooth animations.",
+      "A sleek, responsive company profile website designed to highlight services, portfolio items, and brand identity. Built with Next.js, TailwindCSS, and Framer Motion, it delivers fast page loads, polished animated transitions, and a fully mobile-friendly layout for modern business presentation.",
     imageUrl: "/images/ptpck.png",
     liveLink: "https://ptpck.com",
     githubUrl: "https://github.com/Brrendenn/company-web",
@@ -25,7 +35,7 @@ const projects = [
   {
     title: "I-Tung",
     description:
-      "A client-side expense tracker designed for straightforward financial management. This application allows users to add transactions, which are automatically categorized as income or expenses. It features a dashboard that displays the current balance, total income, and total expenses, along with a complete transaction list where entries can be deleted.",
+      "This application allows users to add transactions, which are automatically categorized as income or expenses. It features a dashboard that displays the current balance, total income, and total expenses, along with a complete transaction list where entries can be deleted.",
     imageUrl: "/images/I-Tung.png",
     liveLink: "https://i-tung-expense-tracker.vercel.app/",
     githubUrl: "https://github.com/Brrendenn/I-Tung-Expense-Tracker",
@@ -56,12 +66,7 @@ const projects = [
     imageUrl: "/images/CommunitySpark.png",
     liveLink: "https://community-spark.up.railway.app",
     githubUrl: "https://github.com/Brrendenn/Community-Action-Tracker.git",
-    tags: [
-      "PHP Laravel",
-      "TailwindCSS",
-      "React.js",
-      "MySQL",
-    ],
+    tags: ["PHP Laravel", "TailwindCSS", "React.js", "MySQL"],
     isPrivate: false,
   },
 ];
@@ -110,60 +115,67 @@ const ProjectSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
         >
-          {projects.map((project) => (
-            <motion.div key={project.title} variants={itemVariants}>
-              <div className="bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden shadow-lg h-full flex flex-col group">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.imageUrl}
-                    alt={project.title}
-                    className="w-full h-56 object-contain transform transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a
+          {myProjects.map((project) => (
+            <motion.div
+              key={project.title}
+              variants={itemVariants}
+              className="h-full w-full"
+            >
+              <CardContainer className="inter-var h-full w-full">
+                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-full min-h-[32rem] flex flex-col justify-between rounded-xl p-6 border">
+                  <div className="flex flex-col flex-1 gap-4">
+                    <CardItem
+                      translateZ="50"
+                      className="text-xl font-bold text-neutral-600 dark:text-white"
+                    >
+                      {project.title}
+                    </CardItem>
+
+                    <CardItem
+                      as="p"
+                      translateZ="60"
+                      className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                    >
+                      {project.description}
+                    </CardItem>
+
+                    <CardItem translateZ="100" className="w-full mt-4">
+                      <img
+                        src={project.imageUrl}
+                        height="1000"
+                        width="1000"
+                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        alt={project.title}
+                      />
+                    </CardItem>
+                  </div>
+
+                  <div className="flex justify-between items-center mt-8 pt-8">
+                    <CardItem
+                      translateZ={20}
+                      as="a"
                       href={project.liveLink}
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white hover:text-zinc-400 p-2 rounded-full bg-zinc-700 bg-opacity-50 transition-colors"
+                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
                     >
-                      <FaLink size={24} />
-                    </a>
-                  </div>
-                </div>
-
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="flex items-center text-xl font-bold text-zinc-900 dark:text-white mb-2">
-                    <span>{project.title}</span>
+                      Try now →
+                    </CardItem>
                     {!project.isPrivate && (
-                      <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${project.title} GitHub repository`}
-                      className="ml-3 text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors"
-                    >
-                      <FaGithub size={22} />
-                    </a>
-                    )}
-                  </h3>
-                  <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="bg-zinc-600 text-white dark:bg-zinc-200 dark:text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-full"
+                      <CardItem
+                        translateZ={20}
+                        as="a"
+                        href={project.githubUrl}
+                        target="_blank"
+                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                       >
-                        {tag}
-                      </span>
-                    ))}
+                        GitHub
+                      </CardItem>
+                    )}
                   </div>
-                </div>
-              </div>
+                </CardBody>
+              </CardContainer>
             </motion.div>
           ))}
         </motion.div>
