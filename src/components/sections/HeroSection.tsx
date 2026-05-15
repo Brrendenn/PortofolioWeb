@@ -7,7 +7,6 @@ import {
   FaLinkedin,
   FaFileDownload,
 } from "react-icons/fa";
-import { cn } from "@/lib/utils";
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 type SyntaxIconProps = {
