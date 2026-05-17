@@ -1,5 +1,5 @@
 import "./App.css";
-import AboutSection from "./components/sections/AboutSection";
+import BentoAboutSection from "./components/sections/BentoAboutSection";
 import HeroSection from "./components/sections/HeroSection";
 import ProjectSection from "./components/sections/ProjectSection";
 import TechSection from "./components/sections/TechSection";
@@ -10,8 +10,9 @@ function App() {
     <div className="bg-zinc-100 dark:bg-zinc-900 min-h-screen font-sans">
       <main className="w-full">
         <HeroSection />
-        <AboutSection />
-        <TechSection />
+        <BentoAboutSection />
+        {/* <AboutSection /> */}
+        {/*<TechSection />*/}
         <ProjectSection />
       </main>
       <NavBar />

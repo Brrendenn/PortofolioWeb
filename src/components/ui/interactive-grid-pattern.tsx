@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -36,14 +36,41 @@ export function InteractiveGridPattern({
   const [horizontal, vertical] = squares;
   const [hoveredSquare, setHoveredSquare] = useState<number | null>(null);
 
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  const handleTouchMove = (e: React.TouchEvent<SVGSVGElement>) => {
+    if (!svgRef.current) return;
+
+    const touch = e.touches[0];
+    const rect = svgRef.current.getBoundingClientRect();
+
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+
+    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+      const col = Math.floor(x / width);
+      const row = Math.floor(y / height);
+
+      if (col >= 0 && col < horizontal && row >= 0 && row < vertical) {
+        setHoveredSquare(row * horizontal + col);
+      }
+    } else {
+      setHoveredSquare(null);
+    }
+  };
+
   return (
     <svg
+      ref={svgRef}
       width={width * horizontal}
       height={height * vertical}
       className={cn(
         "absolute inset-0 h-full w-full border border-gray-400/30",
         className,
       )}
+      onTouchStart={handleTouchMove}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={() => setHoveredSquare(null)}
       {...props}
     >
       {Array.from({ length: horizontal * vertical }).map((_, index) => {

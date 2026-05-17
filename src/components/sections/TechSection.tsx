@@ -1,6 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import GitHubCalendar from "react-github-calendar";
-import { cn } from "@/lib/utils";
+import { ReviewCard } from "../ui/ReviewCard";
 import { Marquee } from "../ui/marquee";
 
 const technology = [
@@ -39,33 +39,13 @@ const TechSection = () => {
   const firstRow = technology.slice(0, technology.length / 2);
   const secondRow = technology.slice(technology.length / 2);
 
-  const ReviewCard = ({ name, img }: { name: string; img: string }) => {
-    return (
-      <figure
-        className={cn(
-          "relative h-40 w-52 cursor-pointer overflow-hidden rounded-xl border p-4",
-          "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-          "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
-          "flex flex-col items-center justify-center text-center",
-        )}
-      >
-        <div>
-          <figcaption className="text-lg font-medium dark:text-white mb-4">
-            {name}
-          </figcaption>
-        </div>
-        <img className="rounded-full" width="52" height="52" alt="" src={img} />
-      </figure>
-    );
-  };
-
   return (
     <section
       id="skills"
       className="w-full bg-white dark:bg-zinc-900 py-20 md:py-24"
     >
       <div className="container mx-auto px-8 overflow-hidden">
-        <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-zinc-200 to-zinc-500 dark:from-zinc-400 dark:to-zinc-200 bg-clip-text text-transparent text-center">
           Technologies I Work With
         </h2>
         <motion.div

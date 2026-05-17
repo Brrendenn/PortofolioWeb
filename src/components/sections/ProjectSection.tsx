@@ -1,5 +1,6 @@
 import { motion, type Variants } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import { FaLock } from "react-icons/fa";
 
 interface Project {
   title: string;
@@ -74,12 +75,7 @@ const myProjects: Project[] = [
 const ProjectSection = () => {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
   };
 
   const itemVariants: Variants = {
@@ -87,28 +83,27 @@ const ProjectSection = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.42, 0, 0.58, 1],
-      },
+      transition: { duration: 0.6, ease: [0.42, 0, 0.58, 1] },
     },
   };
 
   return (
     <section
       id="projects"
-      className="w-full bg-white dark:bg-zinc-900 py-20 md:py-24"
+      className="w-full bg-zinc-50 dark:bg-zinc-950 py-20 md:py-32"
     >
-      <div className="container mx-auto px-8">
-        <motion.h2
+      <div className="container mx-auto px-4 sm:px-8 max-w-7xl">
+        {/* Updated Header to match the new aesthetic */}
+        <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-white mb-12 text-center"
+          className="text-center mb-16"
         >
-          My Projects
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-gradient-to-r from-zinc-800 to-zinc-500 dark:from-zinc-200 dark:to-zinc-500 bg-clip-text text-transparent">
+            Featured Projects
+          </h2>
+        </motion.div>
 
         <motion.div
           variants={containerVariants}
@@ -124,11 +119,12 @@ const ProjectSection = () => {
               className="h-full w-full"
             >
               <CardContainer className="inter-var h-full w-full">
-                <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-full min-h-[32rem] flex flex-col justify-between rounded-xl p-6 border">
+                {/* Tweaked background colors to match the Bento cards (zinc-900/50) */}
+                <CardBody className="bg-white relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800 w-full h-full min-h-[32rem] flex flex-col justify-between rounded-2xl p-6 border shadow-sm">
                   <div className="flex flex-col flex-1 gap-4">
                     <CardItem
                       translateZ="50"
-                      className="text-xl font-bold text-neutral-600 dark:text-white"
+                      className="text-xl font-bold text-zinc-800 dark:text-zinc-100"
                     >
                       {project.title}
                     </CardItem>
@@ -136,39 +132,62 @@ const ProjectSection = () => {
                     <CardItem
                       as="p"
                       translateZ="60"
-                      className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+                      className="text-zinc-600 text-sm max-w-sm dark:text-zinc-400 line-clamp-3"
                     >
                       {project.description}
                     </CardItem>
 
-                    <CardItem translateZ="100" className="w-full mt-4">
+                    {/* NEW: Tech Stack Tags mapped here! */}
+                    <CardItem
+                      translateZ="70"
+                      className="flex flex-wrap gap-2 mt-2"
+                    >
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-zinc-600 bg-zinc-100 rounded-md dark:text-zinc-300 dark:bg-zinc-800/80"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </CardItem>
+
+                    <CardItem translateZ="100" className="w-full mt-auto">
                       <img
                         src={project.imageUrl}
                         height="1000"
                         width="1000"
-                        className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                        className="h-52 w-full object-cover object-top rounded-xl group-hover/card:shadow-xl border border-zinc-100 dark:border-zinc-800"
                         alt={project.title}
                       />
                     </CardItem>
                   </div>
 
-                  <div className="flex justify-between items-center mt-8 pt-8">
+                  <div className="flex justify-between items-center mt-8 pt-4">
                     <CardItem
                       translateZ={20}
                       as="a"
                       href={project.liveLink}
                       target="_blank"
-                      className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+                      className="px-4 py-2 rounded-xl text-xs font-semibold text-zinc-900 dark:text-white hover:text-blue-500 transition-colors"
                     >
-                      Try now →
+                      View Live →
                     </CardItem>
-                    {!project.isPrivate && (
+
+                    {project.isPrivate ? (
+                      <CardItem
+                        translateZ={20}
+                        className="px-4 py-2 rounded-xl text-xs font-medium text-zinc-400 dark:text-zinc-500 italic flex items-center gap-2"
+                      >
+                        <FaLock className="text-zinc-400" />
+                      </CardItem>
+                    ) : (
                       <CardItem
                         translateZ={20}
                         as="a"
                         href={project.githubUrl}
                         target="_blank"
-                        className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
+                        className="px-4 py-2 rounded-xl bg-zinc-900 dark:bg-white dark:text-zinc-900 text-white text-xs font-bold hover:scale-105 transition-transform"
                       >
                         GitHub
                       </CardItem>
