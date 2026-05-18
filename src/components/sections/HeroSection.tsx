@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
-import {
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaFileDownload,
-} from "react-icons/fa";
+import { FaFileDownload } from "react-icons/fa";
 import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 type SyntaxIconProps = {
@@ -146,35 +141,6 @@ const HeroSection = () => {
           variants={itemVariants}
           className="flex flex-col items-center gap-4 mt-4"
         >
-          <div className="flex items-center gap-x-6 pointer-events-auto">
-            <a
-              href="https://github.com/Brrendenn"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
-            >
-              <FaGithub size={24} />
-            </a>
-            <a
-              href="https://linkedin.com/in/nicholas-brandon-chang"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
-              href="https://instagram.com/nicbrandc"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="text-zinc-400 hover:text-zinc-800 dark:hover:text-white transition-colors z-10"
-            >
-              <FaInstagram size={24} />
-            </a>
-          </div>
           <a
             href="/resume/Nicholas_Brandon_Chang-Resume.pdf" // Replace with your resume path
             download="Nicholas_Brandon_Chang-Resume.pdf"

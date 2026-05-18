@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Check, Computer } from "lucide-react";
 import { AnimatedThemeToggler } from "./animated-theme-toggler";
 
 const NavBar = () => {
-  const navLinks = ["About", "Skills", "Projects"];
   const userEmail = "brandon.changg03@gmail.com";
-
   const [isCopied, setIsCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -13,77 +11,37 @@ const NavBar = () => {
       .writeText(userEmail)
       .then(() => {
         setIsCopied(true);
-
         setTimeout(() => {
           setIsCopied(false);
         }, 2000);
       })
-      .catch((err) => {
-        console.error("Failed to copy email: ", err);
-      });
+      .catch((err) => console.error("Failed to copy email: ", err));
   };
 
   const handleScrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const targetElement = document.getElementById(targetId);
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
-    <nav className="fixed bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-between gap-x-3 md:gap-x-6 bg-zinc-600 backdrop-blur-sm text-white rounded-3xl px-3 py-2 shadow-lg ring-1 ring-white/10 via-zinc-500">
+    <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center justify-between gap-x-3 bg-zinc-100/80 dark:bg-zinc-800/80 backdrop-blur-md rounded-full px-4 py-3 shadow-2xl border border-zinc-200 dark:border-zinc-700 z-50">
       <button
         onClick={handleScrollToTop}
-        className="flex items-center justify-center h-10 w-10 bg-white dark:bg-zinc-500 rounded-full transition-transform hover:scale-110 active:scale-95"
+        className="flex items-center justify-center h-10 w-10 bg-white dark:bg-zinc-900 rounded-full transition-transform hover:scale-105 active:scale-95 shadow-sm"
         aria-label="Scroll to top"
       >
-        <Computer className="h-6 w-6 text-zinc-800 dark:text-white" />
+        <Computer className="h-5 w-5 text-zinc-800 dark:text-zinc-200" />
       </button>
-
-      <ul className="hidden md:flex items-center gap-x-4">
-        {navLinks.map((link) => {
-          return (
-            <li key={link}>
-              <button className="flex items-center w-20 justify-center bg-white dark:bg-zinc-500 px-3 py-2 rounded-4xl transition-all duration-200 hover:scale-105 active:scale-95">
-                <a
-                  href={`#${link.toLowerCase()}`}
-                  onClick={(e) => handleSmoothScroll((e), link.toLowerCase())}
-                  className="font-bold text-sm text-zinc-600 hover:text-zinc-800 dark:text-white dark:hover:text-zinc-300"
-                >
-                  {link}
-                </a>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-
       <button
         onClick={handleCopyEmail}
-        className="flex items-center justify-center bg-white dark:bg-zinc-500 text-zinc-600 dark:text-white text-sm font-semibold rounded-2xl px-3 py-2 md:text-sm transition-all duration-200 hover:scale-105 active:scale-95"
-        style={{ minWidth: "180px" }}
+        className="flex items-center justify-center bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 text-sm font-semibold rounded-full px-5 py-2.5 transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm"
+        style={{ minWidth: "160px" }}
       >
         {isCopied ? (
           <span className="flex items-center gap-x-2">
-            Email copied
-            <Check className="h-4 w-4" />
+            Copied! <Check className="h-4 w-4" />
           </span>
         ) : (
-          <>
-            <span className="hidden md:inline">{userEmail}</span>
-            <span className="md:hidden">Email Me</span>
-          </>
+          <span className="flex items-center gap-x-2">{userEmail}</span>
         )}
       </button>
       <AnimatedThemeToggler />
