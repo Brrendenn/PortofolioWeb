@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { FaLock } from "react-icons/fa";
+import { InteractiveGridPattern } from "../ui/interactive-grid-pattern";
 
 interface Project {
   title: string;
@@ -90,10 +91,16 @@ const ProjectSection = () => {
   return (
     <section
       id="projects"
-      className="w-full bg-zinc-50 dark:bg-zinc-950 py-20 md:py-32"
+      className="relative overflow-hidden w-full bg-zinc-50 dark:bg-zinc-950 py-20 md:py-32"
     >
+      <InteractiveGridPattern
+        className="absolute inset-0 z-0 opacity-70"
+        squares={[50, 50]}
+        width={50}
+        height={50}
+        squaresClassName="dark:hover:fill-white/20 dark:stroke-white/5 hover:fill-zinc-900/20 stroke-zinc-400/20"
+      />
       <div className="container mx-auto px-4 sm:px-8 max-w-7xl">
-        {/* Updated Header to match the new aesthetic */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -119,7 +126,6 @@ const ProjectSection = () => {
               className="h-full w-full"
             >
               <CardContainer className="inter-var h-full w-full">
-                {/* Tweaked background colors to match the Bento cards (zinc-900/50) */}
                 <CardBody className="bg-white relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] dark:bg-zinc-900/50 border-zinc-200 dark:border-zinc-800 w-full h-full min-h-[32rem] flex flex-col justify-between rounded-2xl p-6 border shadow-sm">
                   <div className="flex flex-col flex-1 gap-4">
                     <CardItem

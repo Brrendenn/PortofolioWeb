@@ -114,7 +114,7 @@ const HeroSection = () => {
         animate={inView ? "visible" : "hidden"}
         className="flex flex-col items-center justify-center pointer-events-none"
       >
-        <div className="absolute inset-0">
+        {/* <div className="absolute inset-0">
           {syntaxElements.map((element, index) => (
             <SyntaxIcon
               key={index}
@@ -124,31 +124,46 @@ const HeroSection = () => {
               delay={element.delay}
             />
           ))}
-        </div>
-        <motion.div variants={itemVariants}>
-          <h1 className="font-bold text-2xl md:text-5xl mb-2 dark:text-white">
-            Nicholas Brandon Chang
-          </h1>
-        </motion.div>
-
-        <motion.p
-          variants={itemVariants}
-          className="rotate text-zinc-500 dark:text-white font-semibold text-lg md:text-xl"
-        >
-          Aspiring Web Developer
-        </motion.p>
+        </div> */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-col items-center gap-4 mt-4"
+          className="flex flex-col items-center z-10 pointer-events-auto"
         >
-          <a
-            href="/resume/Nicholas_Brandon_Chang-Resume.pdf" // Replace with your resume path
-            download="Nicholas_Brandon_Chang-Resume.pdf"
-            className="flex items-center gap-2 px-4 py-2 bg-gray-800 dark:bg-zinc-200 text-zinc-100 dark:text-zinc-800 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-300 transition-colors z-10 pointer-events-auto"
-          >
-            <FaFileDownload size={20} />
-            <span className="font-semibold">Download Resume</span>
-          </a>
+          <div className="mb-6 flex items-center gap-3 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/50 dark:bg-zinc-900/50 px-4 py-1.5 text-sm font-medium shadow-sm backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+            </span>
+            <span className="text-zinc-600 dark:text-zinc-300">
+              Aspiring Software Engineer
+            </span>
+          </div>
+
+          <h1 className="text-center font-extrabold tracking-tight text-5xl md:text-7xl lg:text-8xl text-zinc-900 dark:text-white mb-6">
+            Nicholas Brandon Chang
+          </h1>
+
+          <p className="max-w-2xl text-center text-lg md:text-xl text-zinc-500 dark:text-zinc-400 mb-10">
+            Crafting scalable enterprise applications and interactive web
+            experiences.
+          </p>
+
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#projects"
+              className="px-6 py-3 rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900 font-semibold hover:scale-105 transition-transform"
+            >
+              View My Work
+            </a>
+            <a
+              href="/resume/Nicholas_Brandon_Chang-Resume.pdf"
+              download
+              className="flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-900/50 text-zinc-900 dark:text-white font-semibold hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors backdrop-blur-sm"
+            >
+              <FaFileDownload />
+              Resume
+            </a>
+          </div>
         </motion.div>
       </motion.div>
     </section>

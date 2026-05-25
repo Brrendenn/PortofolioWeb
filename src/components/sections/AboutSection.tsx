@@ -1,6 +1,7 @@
 import { motion, type Variants } from "framer-motion";
 import { AnimatedIDCard } from "../ui/AnimatedIDCard";
 import { FaLaptopCode, FaCity } from "react-icons/fa";
+import { InteractiveGridPattern } from "../ui/interactive-grid-pattern";
 
 const AboutSection = () => {
   type ReactIconProps = {
@@ -68,6 +69,13 @@ const AboutSection = () => {
       id="about"
       className="w-full bg-white dark:bg-zinc-900 py-20 md:py-32 overflow-hidden"
     >
+      <InteractiveGridPattern
+        className="opacity-70"
+        squares={[50, 50]}
+        width={50}
+        height={50}
+        squaresClassName="dark:hover:fill-white/20 dark:stroke-white/5 hover:fill-zinc-900/20 stroke-zinc-400/20"
+      />
       <motion.div
         variants={containerVariants}
         whileInView="visible"

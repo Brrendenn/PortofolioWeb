@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "../ui/marquee";
 import { AnimatedIDCard } from "../ui/AnimatedIDCard";
 import { ReviewCard } from "../ui/ReviewCard";
+import { InteractiveGridPattern } from "../ui/interactive-grid-pattern";
 
 const technology = [
   { name: "React", imgSrc: "/icons/react.svg" },
@@ -29,7 +30,7 @@ const BentoCard = ({
 }) => (
   <div
     className={cn(
-      "relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-900/50 shadow-sm",
+      "relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-8 dark:border-zinc-800 dark:bg-zinc-900/50 shadow-sm pointer-events-auto",
       className,
     )}
   >
@@ -55,9 +56,16 @@ export default function BentoAboutSection() {
   return (
     <section
       id="about"
-      className="w-full bg-zinc-50 dark:bg-zinc-950 py-20 md:py-32"
+      className="relative overflow-hidden w-full bg-zinc-50 dark:bg-zinc-950 py-20 md:py-32"
     >
-      <div className="container mx-auto px-4 sm:px-8 max-w-6xl">
+      <InteractiveGridPattern
+        className="absolute inset-0 z-0 opacity-70"
+        squares={[50, 50]}
+        width={50}
+        height={50}
+        squaresClassName="dark:hover:fill-white/20 dark:stroke-white/5 hover:fill-zinc-900/20 stroke-zinc-400/20"
+      />
+      <div className="container relative z-10 mx-auto px-4 sm:px-8 max-w-6xl pointer-events-none">
         {/* Section Header */}
         <motion.div
           initial={{ y: 20, opacity: 0 }}
