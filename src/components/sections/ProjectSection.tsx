@@ -31,7 +31,7 @@ const myProjects: Project[] = [
     imageUrl: "/images/ptpck.png",
     liveLink: "https://ptpck.com",
     githubUrl: "https://github.com/Brrendenn/company-web",
-    tags: ["Next.js", "TailwindCSS", "Framer Motion"],
+    tags: ["Next.js", "TailwindCSS", "Framer Motion", "TypeScript"],
     isPrivate: true,
   },
   {
@@ -138,7 +138,7 @@ const ProjectSection = () => {
                     <CardItem
                       as="p"
                       translateZ="60"
-                      className="text-zinc-600 text-sm max-w-sm dark:text-zinc-400 line-clamp-3"
+                      className="text-zinc-600 text-sm max-w-sm dark:text-zinc-400 line-clamp-4"
                     >
                       {project.description}
                     </CardItem>

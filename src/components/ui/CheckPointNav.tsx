@@ -20,7 +20,6 @@ export default function CheckpointNav() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // If the section is intersecting the viewport, mark it active
           if (entry.isIntersecting) {
             setActiveSection(entry.target.id);
           }
